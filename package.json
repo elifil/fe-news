@@ -2,6 +2,7 @@
   "name": "my-react-app",
   "version": "0.1.0",
   "private": true,
+  "repository": "https://github.com/elifil/fe-news",
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
