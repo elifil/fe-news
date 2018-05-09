@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const Content = () => (
+export const Content = ({ children }) => (
     <div>
-        Content will live here
+        { children }
     </div>
 );
