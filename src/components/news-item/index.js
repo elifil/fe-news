@@ -5,7 +5,7 @@ import { distanceInWordsToNow } from 'date-fns';
 import { Link } from 'react-router-dom';
 
 export const NewsItem = ({ id }) => {
-    const item = api.getItem(id);
+    const item = api.getItem(id) || {};
     const timeInMs = item.time * 1000;
     return (
         <div>
