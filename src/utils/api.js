@@ -19,5 +19,5 @@ const getItem = (id) => fetchJson(`${baseUrl}/v0/item/${id}.json`);
 
 export const api = {
     getItemsIds,
-    getItem,
+    getItem
 }
