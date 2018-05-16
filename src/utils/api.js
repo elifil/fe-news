@@ -13,10 +13,8 @@ const baseUrl = 'https://hacker-news.firebaseio.com';
 const fetchJson = url => fetch(url).then(res => res.json());
 const first10 = arr => arr.slice(0, 10);
 
-// Items Ids Endpoint https://hacker-news.firebaseio.com/v0/topstories.json
-const getItemsIds = () => fetchJson(`${baseUrl}/v0/topstories.json`).then(stories => first10(stories))
+const getItemsIds = () => fetchJson(`${baseUrl}/v0/topstories.json`).then(stories => first10(stories));
 
-// Item endpoint https://hacker-news.firebaseio.com/v0/item/8863.json
 const getItem = (id) => fetchJson(`${baseUrl}/v0/item/${id}.json`);
 
 export const api = {
