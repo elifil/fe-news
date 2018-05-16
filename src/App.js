@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Page, Header, Footer, Content, NewsItemList, PageNewsList } from './components';
+import { Page, Header, Footer, Content, PageNewsList } from './components';
 import {NewsItem} from "./components/news-item";
 
 class App extends Component {
