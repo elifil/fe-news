@@ -3,24 +3,19 @@ import  { api } from '../../utils';
 import './style.css';
 import { distanceInWordsToNow } from 'date-fns';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import * as actions from '../../actions';
 
 export class NewsItem extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            item: undefined,
-        }
-    }
 
     componentDidMount() {
-        api.getItem(this.props.id)
-            .then(item => { this.setState({ item }) })
-            .catch(err => { console.error(err) });
+        this.props.fetchItem(this.props.id)
     }
 
     render() {
-        const { item } = this.state;
+        //const item = this.state.item;
+        const item = this.props.item;
         const timeInMs = (time) => time*1000;
         if (!item) {
             return <div>Loading…</div>
@@ -46,4 +41,17 @@ export class NewsItem extends Component {
             </div>
         )
     }
+
 }
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    item: (state.data.items[ownProps.id] || {}).item
+  }
+};
+
+const mapDispatchToProps = {
+  fetchItem: actions.fetchItem,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewsItem);
