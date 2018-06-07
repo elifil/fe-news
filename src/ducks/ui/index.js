@@ -21,8 +21,8 @@ export const selectors = {
 }
 
 export const types = {
-  updateItemsToShow: `${ns} / UPDATE_ITEMS_TO_SHOW`,
-  toggleTheme: `${ns} / TOGGLE_THEME`,
+  updateItemsToShow: 'UPDATE_ITEMS_TO_SHOW',
+  toggleTheme: 'TOGGLE_THEME',
 
 }
 
