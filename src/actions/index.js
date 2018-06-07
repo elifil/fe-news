@@ -12,6 +12,11 @@ export const toggleTheme = () => ({
   type: 'TOGGLE_THEME',
 });
 
+export const setItemsToShow = value => {
+  return (dispatch) => {
+    dispatch(updateItemsToShow(value))
+  }
+};
 
 // DATA
 // DATA ITEMS IDS

@@ -5,4 +5,4 @@ export * from './footer';
 export * from './menu';
 export { default as NewsItem } from './news-item';
 export * from './news-item-list';
-export * from './page-news-list';
+export { default as PageNewsList } from './page-news-list';
