@@ -8,36 +8,22 @@ import * as ducks from '../../ducks'
 const isArraysEqual = (arr1=[], arr2=[]) => arr1.toString() === arr2.toString();
 
 export class PageNewsList extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            data: undefined,
-        }
-
-        this.fetchItems = () => {
-            api.getItemsIds()
-                .then(data => { this.setState({ data }) })
-                .catch(err => { console.error(err) });
-        }
-    }
-
     componentDidMount() {
-        this.fetchItems()
+        this.props.fetchItemsIds()
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        return !isArraysEqual(this.state.data, nextState.data)
+    shouldComponentUpdate(nextProps) {
+        return !isArraysEqual(this.props.ids, nextProps.ids)
     }
 
     render() {
-        const { data } = this.state;
-        if (!data) {
+        const { ids } = this.props;
+        if (!ids) {
             return <div>Loading…</div>
         }
         return (
             <div>
-                <NewsItemList ids={data}/>
+                <NewsItemList ids={ids}/>
                 <button onClick={this.fetchItems}>
                     Refresh
                 </button>
