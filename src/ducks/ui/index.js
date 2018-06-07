@@ -46,7 +46,7 @@ export const rawReducer = (state=defaultState, action) => {
     case types.updateItemsToShow:
       return {
       ...state,
-      itemsToShow: action.payloadDescription
+      itemsToShow: action.payload
     };
     case types.toggleTheme:
       return {
