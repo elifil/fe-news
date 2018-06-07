@@ -4,7 +4,7 @@ import './style.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import * as actions from '../../actions';
+import * as ducks from '../../ducks';
 
 const mainMenu = [
     { text: 'New',    url: 'https://news.ycombinator.com/newest' },
@@ -28,7 +28,7 @@ export const Header = (props) => (
 );
 
 const mapDispatchToProps = {
-  toggleTheme: actions.toggleTheme,
+  toggleTheme: ducks.ui.actions.toggleTheme,
 };
 
 export default connect(null, mapDispatchToProps)(Header)
